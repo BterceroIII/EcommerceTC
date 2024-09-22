@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Model", "Ecommerce.Model\Ecommerce.Model.csproj", "{80E8A02A-DF9D-4E82-93EB-F94DA7B9F638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Model", "Ecommerce.Model\Ecommerce.Model.csproj", "{80E8A02A-DF9D-4E82-93EB-F94DA7B9F638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Repository", "Ecommerce.Repository\Ecommerce.Repository.csproj", "{A88BDE0B-8070-4447-B2AC-3C68CE4CA1EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Repository", "Ecommerce.Repository\Ecommerce.Repository.csproj", "{A88BDE0B-8070-4447-B2AC-3C68CE4CA1EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Service", "Ecommerce.Service\Ecommerce.Service.csproj", "{B70441FE-8F65-4C55-A362-5E4D76BC7DE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Service", "Ecommerce.Service\Ecommerce.Service.csproj", "{B70441FE-8F65-4C55-A362-5E4D76BC7DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.DTO", "Ecommerce.DTO\Ecommerce.DTO.csproj", "{764EB9C7-A3E6-4EBE-8397-D64D8D2F0C35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.DTO", "Ecommerce.DTO\Ecommerce.DTO.csproj", "{764EB9C7-A3E6-4EBE-8397-D64D8D2F0C35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Utilities", "Ecommerce.Utilities\Ecommerce.Utilities.csproj", "{012BB568-1AC1-4EE3-908C-A26B17535769}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Utilities", "Ecommerce.Utilities\Ecommerce.Utilities.csproj", "{012BB568-1AC1-4EE3-908C-A26B17535769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.API", "Ecommerce.API\Ecommerce.API.csproj", "{86D665CD-4299-4177-8209-941F969A1B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.API", "Ecommerce.API\Ecommerce.API.csproj", "{86D665CD-4299-4177-8209-941F969A1B87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.WeAseembly", "Ecommerce.WeAseembly\Ecommerce.WeAseembly.csproj", "{7F229896-A4C0-48D9-9829-B88DFE1B3C9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{86D665CD-4299-4177-8209-941F969A1B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D665CD-4299-4177-8209-941F969A1B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D665CD-4299-4177-8209-941F969A1B87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F229896-A4C0-48D9-9829-B88DFE1B3C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F229896-A4C0-48D9-9829-B88DFE1B3C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F229896-A4C0-48D9-9829-B88DFE1B3C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F229896-A4C0-48D9-9829-B88DFE1B3C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
