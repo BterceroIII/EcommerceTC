@@ -1,6 +1,9 @@
 using Ecommerce.Repository.DBContext;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 
+using Ecommerce.Repository.Contract;
+using Ecommerce.Repository.Implement;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +21,12 @@ builder.Services.AddDbContext<DbecommerceContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
 });
+
+// como es generica y no especifica el modelo que se utiliza AddTransient
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+// se utiliza AddScoped cuando se especifica el modelo
+builder.Services.AddScoped<ISaleRepository, SaleRepository>();
 
 
 var app = builder.Build();
