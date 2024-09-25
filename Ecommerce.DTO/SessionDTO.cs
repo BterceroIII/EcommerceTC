@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.DTO
 {
-    public class SectionDTO
+    public class SessionDTO
     {
         public int IdUsuario { get; set; }
 
