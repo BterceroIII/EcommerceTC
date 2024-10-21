@@ -137,7 +137,11 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
-                var consult = _modelRepository.Consult(p => p.Rol == rol && string.Concat(p.NombreCompleto.ToLower(), p.Correo.ToLower()).Contains(search.ToLower()));
+                var lowerSearch = search.ToLower();
+                var consult = _modelRepository.Consult(p => p.Rol == rol &&
+                    (p.NombreCompleto.ToLower().Contains(lowerSearch) ||
+                    p.Correo.ToLower().Contains(lowerSearch))
+                );
 
                 List<UserDTO> list = _mapper.Map<List<UserDTO>>(await consult.ToListAsync());
                 return list;

@@ -81,9 +81,10 @@ namespace Ecommerce.Service.Implement
         public async Task<List<CategoryDTO>> List(string search)
         {
             try
-            {
-                var consult = _modelRepository.Consult(p =>
-                string.Concat(p.Nombre.ToLower()).Contains(search.ToLower()));
+            {   
+                var lowerSearch = search.ToLower();
+                var consult = _modelRepository.Consult(p => p.Nombre.ToLower().Contains(lowerSearch)); 
+
 
                 List<CategoryDTO> list = _mapper.Map<List<CategoryDTO>>(await consult.ToListAsync());
                 return list;
