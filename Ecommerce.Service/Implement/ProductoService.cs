@@ -146,8 +146,13 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
-                var consult = _modelRepository.Consult(p =>
-                string.Concat(p.Nombre.ToLower()).Contains(search.ToLower()) && p.IdCategoriaNavigation.Nombre.ToLower().Contains(category.ToLower()));
+                // Tuve problemas con la lectura de LINQ en ToLower por lo que decidi guardarlo en una variable
+
+                /*var consult = _modelRepository.Consult(p =>
+                string.Concat(p.Nombre.ToLower()).Contains(search.ToLower()) && p.IdCategoriaNavigation.Nombre.ToLower().Contains(category.ToLower())); */
+
+                var lowerSearch = search.ToLower();
+                var consult = _modelRepository.Consult(p => p.Nombre.ToLower().Contains(lowerSearch) && p.IdCategoriaNavigation.Nombre.ToLower().Contains(lowerSearch));
 
                 List<ProductDTO> list = _mapper.Map<List<ProductDTO>>(await consult.ToListAsync());
                 return list;
