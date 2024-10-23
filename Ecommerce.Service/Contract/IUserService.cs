@@ -10,7 +10,7 @@ namespace Ecommerce.Service.Contract
 {
     public interface IUserService
     {
-        Task<List<UserDTO>> List(string rol, string search);
+        //Task<List<UserDTO>> List(string rol, string search);
 
         Task<UserDTO> GetUser(int id);
 

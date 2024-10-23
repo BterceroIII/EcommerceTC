@@ -16,7 +16,7 @@ namespace Ecommerce.API.Controllers
         {
             _userService = userService;
         }
-
+        /*
         [HttpGet("List/{rol:alpha}/{search:alpha?}")]
         public async Task<IActionResult> ListUser(string rol, string search = "NA")
         {
@@ -38,6 +38,7 @@ namespace Ecommerce.API.Controllers
 
             return Ok(response);
         }
+        */
 
         [HttpGet("Get/{Id:int}")]
         public async Task<IActionResult> GetUser(int Id)

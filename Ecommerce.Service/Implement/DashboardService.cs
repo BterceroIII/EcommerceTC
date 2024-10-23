@@ -13,6 +13,7 @@ namespace Ecommerce.Service.Implement
 {
     public class DashboardService : IDashboardService
     {
+        
         private readonly IGenericRepository<Usuario> _userRepository;
         private readonly IGenericRepository<Producto> _productRepository;
         private readonly ISaleRepository _saleRepository;
@@ -25,7 +26,7 @@ namespace Ecommerce.Service.Implement
             _productRepository = productRepository;
             _saleRepository = saleRepository;
         }
-
+        /*
         private string Income()
         {
             var consult = _saleRepository.Consult();
@@ -46,6 +47,7 @@ namespace Ecommerce.Service.Implement
             int total = consult.Count();
             return total;
         }
+        
 
         private int Product()
         {
@@ -54,17 +56,22 @@ namespace Ecommerce.Service.Implement
             return total;
         }
 
+        */
+
         public DashboardDTO Summary()
         {
             try
             {
+                
                 DashboardDTO dto = new DashboardDTO()
                 {
-                    TotalIngresos = Income(),
-                    TotalVentas = Sales(),
-                    TotalProductos = Product(),
-                    TotalClientes = Customer(),
+                    //TotalIngresos = Income(),
+                    //TotalVentas = Sales(),
+                    //TotalProductos = Product(),
+                    //TotalClientes = Customer(),
                 };
+                
+
 
                 return dto;
             }

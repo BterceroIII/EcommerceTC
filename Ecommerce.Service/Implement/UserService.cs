@@ -133,16 +133,16 @@ namespace Ecommerce.Service.Implement
             }
         }
 
-        public async Task<List<UserDTO>> List(string rol, string search)
+        /*public async Task<List<UserDTO>> List(string rol, string search)
         {
             try
             {
-                var lowerSearch = search.ToLower();
-                var consult = _modelRepository.Consult(p => p.Rol == rol &&
+               var lowerSearch = search.ToLower();
+                var consult = _modelRepository.Consult(p => p.Rol == rol && 
                     (p.NombreCompleto.ToLower().Contains(lowerSearch) ||
                     p.Correo.ToLower().Contains(lowerSearch))
                 );
-
+               
                 List<UserDTO> list = _mapper.Map<List<UserDTO>>(await consult.ToListAsync());
                 return list;
             }
@@ -152,6 +152,7 @@ namespace Ecommerce.Service.Implement
                 throw ex;
             }
         }
+        */
 
         public async Task<UserDTO> GetUser(int id)
         {

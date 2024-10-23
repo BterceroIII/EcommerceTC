@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Ecommerce.Model\Ecommerce.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DBContext\" />
+  </ItemGroup>
+
 </Project>

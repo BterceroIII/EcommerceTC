@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Ecommerce.Model;
 
@@ -10,6 +11,9 @@ public partial class Producto
     public string? Nombre { get; set; }
 
     public string? Descripcion { get; set; }
+
+    // nueva propiedad
+    public string Codigo { get; set; }
 
     public int? IdCategoria { get; set; }
 
@@ -22,6 +26,9 @@ public partial class Producto
     public string? Imagen { get; set; }
 
     public DateTime? FechaCreacion { get; set; }
+
+    // nueva propiedad
+    public bool Estado { get; set; }
 
     public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
 
