@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Model
+namespace Ecommerce.Repository.DBContext
 {
     public partial class DbecommerceContext : DbContext
     {
@@ -102,9 +102,9 @@ namespace Ecommerce.Model
                 entity.Property(e => e.NombreCompleto)
                     .HasMaxLength(50)
                     .IsUnicode(false);
-                //entity.Property(e => e.Rol)
-                    //.HasMaxLength(50)
-                    //.IsUnicode(false);
+                entity.Property(e => e.Rol)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Venta>(entity =>

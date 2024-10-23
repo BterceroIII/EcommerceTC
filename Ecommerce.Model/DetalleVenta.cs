@@ -15,9 +15,6 @@ public partial class DetalleVenta
 
     public decimal? Total { get; set; }
 
-    // nueva propiedad
-    public bool Estado { get; set; }
-
     public virtual Producto? IdProductoNavigation { get; set; }
 
     public virtual Venta? IdVentaNavigation { get; set; }

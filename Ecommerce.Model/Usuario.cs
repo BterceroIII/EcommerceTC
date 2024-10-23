@@ -13,9 +13,7 @@ public partial class Usuario
 
     public string? Clave { get; set; }
 
-    public virtual Rol? IdRolNavigation { get; set; }
-
-    //public string? Rol { get; set; }
+    public string? Rol { get; set; }
 
     public DateTime? FechaCreacion { get; set; }
 

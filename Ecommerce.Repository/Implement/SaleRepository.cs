@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ecommerce.Model;
 using Ecommerce.Repository.Contract;
+using Ecommerce.Repository.DBContext;
 
 namespace Ecommerce.Repository.Implement
 {
