@@ -13,6 +13,8 @@ public partial class Venta
 
     public DateTime? FechaCreacion { get; set; }
 
+    public bool? Estado { get; set; }
+
     public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();
 
     public virtual Usuario? IdUsuarioNavigation { get; set; }
