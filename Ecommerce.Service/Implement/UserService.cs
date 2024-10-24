@@ -82,6 +82,7 @@ namespace Ecommerce.Service.Implement
                     fromDbModel.NombreCompleto = model.NombreCompleto;
                     fromDbModel.Correo = model.Correo;
                     fromDbModel.Clave = model.Clave;
+                    fromDbModel.IdRolNavigation.NombreRol = model.IdRolNavigation.NombreRol;
 
                     var answer = await _modelRepository.Edit(fromDbModel);
 
@@ -138,7 +139,7 @@ namespace Ecommerce.Service.Implement
             try
             {
                 var lowerSearch = search.ToLower();
-                var consult = _modelRepository.Consult(p => p.Rol == rol &&
+                var consult = _modelRepository.Consult(p => p.IdRolNavigation.NombreRol == rol &&
                     (p.NombreCompleto.ToLower().Contains(lowerSearch) ||
                     p.Correo.ToLower().Contains(lowerSearch))
                 );

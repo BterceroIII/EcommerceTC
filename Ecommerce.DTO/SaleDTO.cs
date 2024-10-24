@@ -14,6 +14,8 @@ namespace Ecommerce.DTO
 
         public decimal? Total { get; set; }
 
+        public bool Status { get; set; }
+
         public virtual ICollection<SaleDetailDTO> DetalleVenta { get; set; } = new List<SaleDetailDTO>();
     }
 }

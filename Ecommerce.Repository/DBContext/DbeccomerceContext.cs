@@ -102,9 +102,6 @@ namespace Ecommerce.Repository.DBContext
                 entity.Property(e => e.NombreCompleto)
                     .HasMaxLength(50)
                     .IsUnicode(false);
-                entity.Property(e => e.Rol)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Venta>(entity =>

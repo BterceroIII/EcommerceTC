@@ -9,6 +9,7 @@ using Ecommerce.Utilities;
 
 using Ecommerce.Service.Contract;
 using Ecommerce.Service.Implement;
+using Ecommerce.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,7 @@ builder.Services.AddSwaggerGen();
 
 // dependece
 
-builder.Services.AddDbContext<DbecommerceContext>(options =>
+builder.Services.AddDbContext<DbecommerceProContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("CadenaSQL"));
 });

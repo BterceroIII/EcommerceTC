@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-
+using Ecommerce.Model;
 using Ecommerce.Repository.Contract;
 using Ecommerce.Repository.DBContext;
 
@@ -12,9 +12,9 @@ namespace Ecommerce.Repository.Implement
 {
     public class GenericRepository<TModel>: IGenericRepository<TModel> where TModel : class
     {
-        private readonly DbecommerceContext _dbContext;
+        private readonly DbecommerceProContext _dbContext;
 
-        public GenericRepository( DbecommerceContext dbecommerceContext)
+        public GenericRepository(DbecommerceProContext dbecommerceContext)
         {
             _dbContext = dbecommerceContext;
         }

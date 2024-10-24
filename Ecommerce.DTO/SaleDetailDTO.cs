@@ -15,5 +15,7 @@ namespace Ecommerce.DTO
         public int? Cantidad { get; set; }
 
         public decimal? Total { get; set; }
+
+        public bool Status { get; set; }
     }
 }

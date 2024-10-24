@@ -42,7 +42,7 @@ namespace Ecommerce.Service.Implement
 
         private int Customer()
         {
-            var consult = _userRepository.Consult(u => u.Rol.ToLower() == "cliente");
+            var consult = _userRepository.Consult(u => u.IdRolNavigation.NombreRol.ToLower() == "cliente");
             int total = consult.Count();
             return total;
         }

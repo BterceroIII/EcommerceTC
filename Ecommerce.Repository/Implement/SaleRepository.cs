@@ -11,9 +11,9 @@ namespace Ecommerce.Repository.Implement
 {
     public class SaleRepository : GenericRepository<Venta>,  ISaleRepository
     {
-        private readonly DbecommerceContext _dbContext;
+        private readonly DbecommerceProContext _dbContext;
 
-        public SaleRepository(DbecommerceContext dbecommerceContext) : base(dbecommerceContext) 
+        public SaleRepository(DbecommerceProContext dbecommerceContext) : base(dbecommerceContext) 
         {
             _dbContext = dbecommerceContext;
         }

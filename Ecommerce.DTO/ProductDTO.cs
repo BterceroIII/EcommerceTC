@@ -31,6 +31,11 @@ namespace Ecommerce.DTO
         [Required(ErrorMessage = "Ingrese la imagen")]
         public string? Imagen { get; set; }
 
+        public bool? Estado { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el codigo")]
+        public string? Codigo { get; set; }
+
         public DateTime? FechaCreacion { get; set; }
 
         public virtual CategoryDTO? IdCategoriaNavigation { get; set; }

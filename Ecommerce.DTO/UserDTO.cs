@@ -29,5 +29,7 @@ namespace Ecommerce.DTO
 
         public string? Rol { get; set; }
 
+        public virtual RolDTO? IdRolNavigation { get; set; }
+
     }
 }
