@@ -33,6 +33,16 @@ namespace Ecommerce.DTO
 
         public bool? Estado { get; set; }
 
+        public string EstadoDescripcion
+        {
+            get
+            {
+                return Estado.HasValue
+                    ? (Estado.Value ? "Activo" : "Inactivo")
+                    : "No especificado";
+            }
+        }
+
         [Required(ErrorMessage = "Ingrese el codigo")]
         public string? Codigo { get; set; }
 
