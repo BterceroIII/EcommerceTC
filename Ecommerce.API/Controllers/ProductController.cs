@@ -80,8 +80,6 @@ namespace Ecommerce.API.Controllers
             {
                 response.EsCorrecto= false;
                 response.Mensaje = ex.Message;
-
-                throw ex;
             }
 
             return Ok(response);
@@ -101,8 +99,6 @@ namespace Ecommerce.API.Controllers
             {
                 response.EsCorrecto = false;
                 response.Mensaje= ex.Message;
-
-                throw ex;
             }
 
             return Ok(response);  
