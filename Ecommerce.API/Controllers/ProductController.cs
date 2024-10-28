@@ -64,16 +64,17 @@ namespace Ecommerce.API.Controllers
 
             return Ok(response);
         }
+        
 
         [HttpGet("Get/{Id:int}")]
-        public async Task<IActionResult> GetProduct(int id)
+        public async Task<IActionResult> GetProduct(int Id)
         {
             var response = new ResponseDTO<ProductDTO>();
 
             try
             {
                 response.EsCorrecto = true;
-                response.Resultado = await _productService.GetProduct(id);
+                response.Resultado = await _productService.GetProduct(Id);
             }
             catch (Exception ex)
             {
