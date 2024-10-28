@@ -173,6 +173,7 @@ namespace Ecommerce.Service.Implement
                 var lowerSearch = search.ToLower();
                 var consult = _modelRepository.Consult(p => p.Nombre.ToLower().Contains(lowerSearch));
 
+
                 List<ProductDTO> list = _mapper.Map<List<ProductDTO>>(await consult.ToListAsync());
                 return list;
             }

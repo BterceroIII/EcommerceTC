@@ -139,6 +139,7 @@ namespace Ecommerce.Service.Implement
             try
             {
                 var lowerSearch = search.ToLower();
+                
                 var consult = _modelRepository.Consult(p => p.IdRolNavigation.NombreRol == rol &&
                     (p.NombreCompleto.ToLower().Contains(lowerSearch) ||
                     p.Correo.ToLower().Contains(lowerSearch))
@@ -159,6 +160,7 @@ namespace Ecommerce.Service.Implement
             try
             {
                 var consult = _modelRepository.Consult(p => p.IdUsuario == id);
+                consult = consult.Include(c => c.IdRolNavigation);
                 var fromDbModel = await consult.FirstOrDefaultAsync();
 
                 if (fromDbModel != null)
@@ -176,7 +178,6 @@ namespace Ecommerce.Service.Implement
                 throw ex;
             }
         }
-
 
     }
 }
