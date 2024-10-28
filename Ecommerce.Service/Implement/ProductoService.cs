@@ -29,6 +29,12 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
+                var exists = await _modelRepository.Consult(p => p.Codigo == model.Codigo).AnyAsync();
+                if (exists)
+                {
+                    throw new TaskCanceledException("Ya existe un producto con el mismo código");
+                }
+
                 var dbModel = _mapper.Map<Producto>(model);
                 var rspModel = await _modelRepository.Create(dbModel);
 

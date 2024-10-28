@@ -28,6 +28,12 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
+                var exists = await _modelRepository.Consult(p => p.Nombre == model.Nombre).AnyAsync();
+                if (exists)
+                {
+                    throw new TaskCanceledException("Ya existe una categoria con el mismo Nombre");
+                }
+
                 var dbModel = _mapper.Map<Categoria>(model);
                 var rspModel = await _modelRepository.Create(dbModel);
 

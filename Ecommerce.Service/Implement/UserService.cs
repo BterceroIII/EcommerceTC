@@ -51,6 +51,12 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
+                var exists = await _modelRepository.Consult(p => p.Correo == model.Correo).AnyAsync();
+                if (exists)
+                {
+                    throw new TaskCanceledException("Ya existe un Usuario con el mismo Correo");
+                }
+
                 var dbModel = _mapper.Map<Usuario>(model);
                 var rspModel = await _modelRepository.Create(dbModel);
 

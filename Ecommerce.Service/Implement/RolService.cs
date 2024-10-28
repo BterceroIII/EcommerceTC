@@ -47,6 +47,12 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
+                var exists = await _modelRepository.Consult(p => p.NombreRol == model.NombreRol).AnyAsync();
+                if (exists)
+                {
+                    throw new TaskCanceledException("Ya existe un Rol con el mismo Nombre");
+                }
+
                 var dbModel = _mapper.Map<Rol>(model);
                 var rspModel = await _modelRepository.Create(dbModel);
 
