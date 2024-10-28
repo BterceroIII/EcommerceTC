@@ -16,7 +16,11 @@ namespace Ecommerce.Utilities
         {
             CreateMap<Usuario, UserDTO>();
             CreateMap<Usuario, SessionDTO>();
-            CreateMap<UserDTO, Usuario>();
+            CreateMap<UserDTO, Usuario>().ForMember(destiny =>
+            destiny.IdRolNavigation, opt => opt.Ignore());
+
+            CreateMap<Rol, RolDTO>();
+            CreateMap<RolDTO, Rol>();
 
             CreateMap<Categoria, CategoryDTO>();
             CreateMap<CategoryDTO, Categoria>();
