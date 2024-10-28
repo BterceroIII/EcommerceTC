@@ -27,6 +27,8 @@ namespace Ecommerce.DTO
 
         public string? ConfirmarClave { get; set; }
 
+        public int? IdRol { get; set; }
+
         public virtual RolDTO? IdRolNavigation { get; set; }
 
     }
