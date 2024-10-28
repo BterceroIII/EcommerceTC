@@ -59,5 +59,65 @@ namespace Ecommerce.API.Controllers
 
             return Ok(response);
         }
+
+        [HttpPost("Create")]
+        public async Task<IActionResult> CreateRol([FromBody] RolDTO model)
+        {
+            var response = new ResponseDTO<RolDTO>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _rolService.Create(model);
+            }
+            catch (Exception ex)
+            {
+
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+
+            return Ok(response);
+        }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> UpdateRol([FromBody] RolDTO model)
+        {
+            var response = new ResponseDTO<bool>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _rolService.Update(model);
+            }
+            catch (Exception ex)
+            {
+
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+
+            return Ok(response);
+        }
+
+        [HttpDelete("Delete/{Id:int}")]
+        public async Task<IActionResult> DeleteRol(int Id)
+        {
+            var response = new ResponseDTO<bool>();
+
+            try
+            {
+                response.EsCorrecto = true;
+                response.Resultado = await _rolService.Delete(Id);
+            }
+            catch (Exception ex)
+            {
+
+                response.EsCorrecto = false;
+                response.Mensaje = ex.Message;
+            }
+
+            return Ok(response);
+        }
     }
 }
