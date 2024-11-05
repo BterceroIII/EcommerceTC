@@ -32,9 +32,9 @@ namespace Ecommerce.WeAseembly.Services.Implement
             return await _httpClient.GetFromJsonAsync<ResponseDTO<RolDTO>>($"Rol/GetRol/{id}");
         }
 
-        public async Task<ResponseDTO<List<RolDTO>>> ListRol(string rol, string search)
+        public async Task<ResponseDTO<List<RolDTO>>> ListRol(string search)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<RolDTO>>>($"Rol/ListRol/{rol}/{search}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<RolDTO>>>($"Rol/ListRol/{search}");
         }
 
         public async Task<ResponseDTO<bool>> UpdateRol(RolDTO model)

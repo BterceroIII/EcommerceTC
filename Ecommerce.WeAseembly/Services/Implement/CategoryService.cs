@@ -31,9 +31,9 @@ namespace Ecommerce.WeAseembly.Services.Implement
             return await _httpClient.GetFromJsonAsync<ResponseDTO<CategoryDTO>>($"Category/CreateCategory/{id}");
         }
 
-        public async Task<ResponseDTO<List<CategoryDTO>>> ListCategory(string rol, string search)
+        public async Task<ResponseDTO<List<CategoryDTO>>> ListCategory(string search)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<CategoryDTO>>>($"Category/CreateCategory/{rol}/{search}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<CategoryDTO>>>($"Category/CreateCategory/{search}");
         }
 
         public async Task<ResponseDTO<bool>> UpdateCategory(CategoryDTO model)

@@ -4,7 +4,7 @@ namespace Ecommerce.WeAseembly.Services.Contract
 {
     public interface IRolService
     {
-        Task<ResponseDTO<List<RolDTO>>> ListRol(string rol, string search);
+        Task<ResponseDTO<List<RolDTO>>> ListRol(string search);
 
         Task<ResponseDTO<RolDTO>> GetRol(int id);
 

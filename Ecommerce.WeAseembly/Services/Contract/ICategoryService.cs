@@ -4,7 +4,7 @@ namespace Ecommerce.WeAseembly.Services.Contract
 {
     public interface ICategoryService
     {
-        Task<ResponseDTO<List<CategoryDTO>>> ListCategory(string rol, string search);
+        Task<ResponseDTO<List<CategoryDTO>>> ListCategory(string search);
 
         Task<ResponseDTO<CategoryDTO>> GetCategory(int id);
 
