@@ -1,8 +1,104 @@
 ﻿@page "/category"
 @page "/category/{Id:int}"
 
-<h3>Categoria</h3>
+@inject ICategoryService categoryService;
+@inject IToastService toastService;
+@inject NavigationManager _navService;
+@attribute [Authorize(Roles = "1")]
+
+<div class="row justify-content-center  mt-3">
+    <p class="col-sm-12 col-md-8 col-xl-10 h4 mt-2">@Title</p>
+</div>
+<div class="row justify-content-center  mt-3">
+    <div class="col-sm-12 col-md-8 col-xl-10">
+
+        <EditForm Model="model" OnValidSubmit="Save">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <div class="input-group">
+                <span class="input-group-text bg-light">Nombre</span>
+                <input type="text" class="form-control" @bind-value="model.Nombre">
+            </div>
+            <ValidationMessage For="@(()=>model.Nombre)" />
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary" style="width:130px">@Button</button>
+                <a href="/categorys" class="btn btn-secondary" style="width:130px">Volver</a>
+            </div>
+        </EditForm>
+
+
+    </div>
+
+</div>
 
 @code {
 
+    [Parameter]
+    public int Id { get; set; }
+    private string Title = "Nueva categoria";
+    private string Button = "Crear";
+    private CategoryDTO model = new CategoryDTO();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id != 0)
+        {
+            Title = "Editar Categoria";
+            Button = "Actualizar";
+
+            var response = await categoryService.GetCategory(Id);
+            if (response.EsCorrecto)
+            {
+                model = (CategoryDTO)response.Resultado!;
+            }
+            else
+            {
+                toastService.ShowWarning(response.Mensaje);
+            }
+        }
+    }
+
+    private async Task Save()
+    {
+        bool responseBool = true;
+        string message = string.Empty;
+
+        if (Id != 0)
+        {
+            var response = await categoryService.UpdateCategory(model);
+            if (response.EsCorrecto)
+            {
+                message = "Categoria fue modificado";
+            }
+            else
+            {
+                responseBool = false;
+                message = "No se puede editar";
+            }
+
+        }
+        else
+        {
+            var response = await categoryService.CreateCategory(model);
+            if (response.EsCorrecto)
+            {
+                message = "Categoria fue creado";
+            }
+            else
+            {
+                responseBool = false;
+                message = "No se puede crear";
+            }
+        }
+
+        if (responseBool)
+        {
+            toastService.ShowSuccess(message);
+            _navService.NavigateTo("/categorys");
+        }
+        else
+        {
+            toastService.ShowWarning(message);
+        }
+    }
 }

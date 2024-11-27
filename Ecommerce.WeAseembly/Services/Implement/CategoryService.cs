@@ -15,7 +15,7 @@ namespace Ecommerce.WeAseembly.Services.Implement
 
         public async Task<ResponseDTO<CategoryDTO>> CreateCategory(CategoryDTO model)
         {
-            var response = await _httpClient.PostAsJsonAsync("Category/CreateCategory", model);
+            var response = await _httpClient.PostAsJsonAsync("Category/Create", model);
             var result = await response.Content.ReadFromJsonAsync<ResponseDTO<CategoryDTO>>();
 
             return result;
@@ -23,22 +23,22 @@ namespace Ecommerce.WeAseembly.Services.Implement
 
         public async Task<ResponseDTO<bool>> DeleteCategory(int id)
         {
-            return await _httpClient.DeleteFromJsonAsync<ResponseDTO<bool>>($"Category/CreateCategory/{id}");
+            return await _httpClient.DeleteFromJsonAsync<ResponseDTO<bool>>($"Category/Delete/{id}");
         }
 
         public async Task<ResponseDTO<CategoryDTO>> GetCategory(int id)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<CategoryDTO>>($"Category/CreateCategory/{id}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<CategoryDTO>>($"Category/Get/{id}");
         }
 
         public async Task<ResponseDTO<List<CategoryDTO>>> ListCategory(string search)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<CategoryDTO>>>($"Category/CreateCategory/{search}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<CategoryDTO>>>($"Category/List/{search}");
         }
 
         public async Task<ResponseDTO<bool>> UpdateCategory(CategoryDTO model)
         {
-            var response = await _httpClient.PutAsJsonAsync("Category/CreateCategory", model);
+            var response = await _httpClient.PutAsJsonAsync("Category/Update", model);
             var result = await response.Content.ReadFromJsonAsync<ResponseDTO<bool>>();
 
             return result;

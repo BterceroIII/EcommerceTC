@@ -10,6 +10,9 @@ using Ecommerce.WeAseembly.Services.Implement;
 
 using CurrieTechnologies.Razor.SweetAlert2;
 
+using Microsoft.AspNetCore.Components.Authorization;
+using Ecommerce.WeAseembly.Extension;
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -29,5 +32,7 @@ builder.Services.AddScoped<ISaleService, SaleService>();
 builder.Services.AddScoped<ICartService, CartService>();
 
 builder.Services.AddSweetAlert2();
+builder.Services.AddScoped<AuthenticationStateProvider, AuthenticationExtension>();
+builder.Services.AddAuthorizationCore();
 
 await builder.Build().RunAsync();

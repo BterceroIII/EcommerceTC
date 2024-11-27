@@ -15,12 +15,12 @@ namespace Ecommerce.WeAseembly.Services.Implement
 
         public async Task<ResponseDTO<List<ProductDTO>>> Catalog(string category, string search)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<ProductDTO>>>($"Product/Catelog/{category}/{search}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<ProductDTO>>>($"Product/Catalog/{category}/{search}");
         }
 
         public async Task<ResponseDTO<ProductDTO>> CreateProduct(ProductDTO model)
         {
-            var response = await _httpClient.PostAsJsonAsync("Product/CreateProduct", model);
+            var response = await _httpClient.PostAsJsonAsync("Product/Create", model);
             var result = await response.Content.ReadFromJsonAsync<ResponseDTO<ProductDTO>>();
 
             return result;
@@ -28,22 +28,22 @@ namespace Ecommerce.WeAseembly.Services.Implement
 
         public async Task<ResponseDTO<bool>> DeleteProduct(int id)
         {
-            return await _httpClient.DeleteFromJsonAsync<ResponseDTO<bool>>($"Product/DeleteProduct/{id}");
+            return await _httpClient.DeleteFromJsonAsync<ResponseDTO<bool>>($"Product/Delete/{id}");
         }
 
         public async Task<ResponseDTO<ProductDTO>> GetProduct(int id)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<ProductDTO>>($"Product/GetProduct/{id}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<ProductDTO>>($"Product/Get/{id}");
         }
 
         public async Task<ResponseDTO<List<ProductDTO>>> ListProduct(string search)
         {
-            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<ProductDTO>>>($"Product/ListProduct/{search}");
+            return await _httpClient.GetFromJsonAsync<ResponseDTO<List<ProductDTO>>>($"Product/List/{search}");
         }
 
         public async Task<ResponseDTO<bool>> UpdateProduct(ProductDTO model)
         {
-            var response = await _httpClient.PutAsJsonAsync("Product/UpdateProduct", model);
+            var response = await _httpClient.PutAsJsonAsync("Product/Update", model);
             var result = await response.Content.ReadFromJsonAsync<ResponseDTO<bool>>();
 
             return result;

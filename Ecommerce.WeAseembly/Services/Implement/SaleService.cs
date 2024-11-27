@@ -15,7 +15,7 @@ namespace Ecommerce.WeAseembly.Services.Implement
 
         public async Task<ResponseDTO<SaleDTO>> CreateSale(SaleDTO model)
         {
-            var response = await _httpClient.PostAsJsonAsync("Sale/CreateSale", model);
+            var response = await _httpClient.PostAsJsonAsync("Sale/Create", model);
             var result = await response.Content.ReadFromJsonAsync<ResponseDTO<SaleDTO>>();
 
             return result;
