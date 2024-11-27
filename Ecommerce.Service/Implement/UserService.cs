@@ -88,7 +88,7 @@ namespace Ecommerce.Service.Implement
                     fromDbModel.NombreCompleto = model.NombreCompleto;
                     fromDbModel.Correo = model.Correo;
                     fromDbModel.Clave = model.Clave;
-                    fromDbModel.IdRolNavigation.NombreRol = model.IdRolNavigation.NombreRol;
+                    fromDbModel.IdRol = model.IdRol;
 
                     var answer = await _modelRepository.Edit(fromDbModel);
 

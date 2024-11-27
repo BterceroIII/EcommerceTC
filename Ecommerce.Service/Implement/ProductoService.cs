@@ -70,7 +70,6 @@ namespace Ecommerce.Service.Implement
                     fromDbModel.PrecioOferta = model.PrecioOferta;
                     fromDbModel.Cantidad = model.Cantidad;
                     fromDbModel.Imagen = model.Imagen;
-                    fromDbModel.Estado = model.Estado;
                     fromDbModel.Codigo = model.Codigo;
                     var answer = await _modelRepository.Edit(fromDbModel);
 
@@ -99,7 +98,7 @@ namespace Ecommerce.Service.Implement
         {
             try
             {
-                var consult = _modelRepository.Consult(p => p.IdProducto == id && p.Estado == false);
+                var consult = _modelRepository.Consult(p => p.IdProducto == id);
                 var fromDbModel = await consult.FirstOrDefaultAsync();
 
                 if (fromDbModel != null)

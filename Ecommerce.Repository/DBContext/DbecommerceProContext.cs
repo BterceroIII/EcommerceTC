@@ -47,7 +47,6 @@ public partial class DbecommerceProContext : DbContext
         {
             entity.HasKey(e => e.IdDetalleVenta).HasName("PK__DetalleV__AAA5CEC278EABDFB");
 
-            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.Total).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.DetalleVenta)
@@ -71,7 +70,6 @@ public partial class DbecommerceProContext : DbContext
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(1000)
                 .IsUnicode(false);
-            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -126,7 +124,6 @@ public partial class DbecommerceProContext : DbContext
         {
             entity.HasKey(e => e.IdVenta).HasName("PK__Venta__BC1240BD0A7971EE");
 
-            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
