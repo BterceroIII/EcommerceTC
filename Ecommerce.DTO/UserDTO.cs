@@ -23,8 +23,6 @@ namespace Ecommerce.DTO
 
         public string? Clave { get; set; }
 
-        [Required(ErrorMessage = "Confirme su contraseña")]
-
         public string? ConfirmarClave { get; set; }
 
         public int? IdRol { get; set; }

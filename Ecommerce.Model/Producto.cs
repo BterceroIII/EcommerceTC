@@ -23,8 +23,6 @@ public partial class Producto
 
     public DateTime? FechaCreacion { get; set; }
 
-    public bool? Estado { get; set; }
-
     public string? Codigo { get; set; }
 
     public virtual ICollection<DetalleVenta> DetalleVenta { get; set; } = new List<DetalleVenta>();

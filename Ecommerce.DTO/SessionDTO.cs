@@ -14,6 +14,8 @@ namespace Ecommerce.DTO
 
         public string? Correo { get; set; }
 
-        public string? Rol { get; set; }
+        public int? IdRol { get; set; }
+
+        public virtual RolDTO? IdRolNavigation { get; set; }
     }
 }
